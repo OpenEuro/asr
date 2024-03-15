@@ -17,4 +17,4 @@ jobs:
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
-        run: git push https://openeuro:$HF_TOKEN@huggingface.co/spaces/openeuro/asr main
+        run: git push https://tools4eu:$HF_TOKEN@huggingface.co/spaces/tools4eu/asr main
