@@ -188,7 +188,7 @@ with gr.Blocks(title="Automatic speech recognition (beta)", css=css, analytics_e
     with gr.Row():
         gr.Markdown(
             """
-                # Automatic speech recognition
+                # Automatic speech recognition (beta)
 
                 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
                 

@@ -38,7 +38,7 @@ RUN python3.10 -m venv /home/${NB_USER}/venv \
     && /home/${NB_USER}/venv/bin/pip install --upgrade pip wheel \
     && /home/${NB_USER}/venv/bin/pip install -r /home/${NB_USER}/requirements.txt
 
-COPY --chown=${NB_USER}:users ./.env* /home/${NB_USER}/.env
+COPY --chown=${NB_USER}:users ./.env* /home/${NB_USER}/
 COPY --chown=${NB_USER}:users ./src /home/${NB_USER}/src
 
 EXPOSE 7860
