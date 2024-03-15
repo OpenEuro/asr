@@ -1,0 +1,21 @@
+{
+    "name": "Automatic speech recognition",
+    "build": {
+        "context": "..",
+        "dockerfile": "../Dockerfile"
+    },
+    "forwardPorts": [
+        7860
+    ],
+    "runArgs": [
+        "--gpus=all"
+    ],
+    "customizations": {
+        "vscode": {
+            // Add the IDs of extensions you want installed when the container is created.
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    }
+}

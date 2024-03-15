@@ -1,0 +1,11 @@
+transformers==4.38.2
+accelerate==0.27.2
+gradio==4.21.0
+pyannote.audio==3.1.1
+python-docx==0.8.11
+pandas
+python-dotenv
+optimum
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.1.2
+torchaudio==2.1.2
