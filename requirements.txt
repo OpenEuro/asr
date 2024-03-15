@@ -3,7 +3,7 @@ accelerate==0.27.2
 gradio==4.21.0
 pyannote.audio==3.1.1
 python-docx==0.8.11
-pandas
+pandas==2.2.1
 python-dotenv
 optimum
 --extra-index-url https://download.pytorch.org/whl/cu121
