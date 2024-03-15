@@ -2,10 +2,10 @@
 title: Automatic speech recognition
 sdk: gradio
 app_file: src/app.py
-python_version: 3.9
-sdk_version: 3.36.1
+python_version: 3.10
+sdk_version: 4.21.0
 app_port: 7860
-tags: [asr, stt, speech-to-text]
+tags: [asr, stt, speech-to-text, whisper, pyannote, diarization]
 pinned: true
 emoji: ✍️
 ---
