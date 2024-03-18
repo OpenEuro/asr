@@ -36,7 +36,7 @@ The repo contains (will contain) code to run the software
 
 The host machine must have an NVidia graphics card with CUDA 12.x installed natively, preferably [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive), even when using Docker.
 
-The graphics card should have at least 8GB VRAM.
+The graphics card should have at least 12GB VRAM for the largest model.
 
 The host machine must have Docker installed.
 
