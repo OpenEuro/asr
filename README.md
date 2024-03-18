@@ -14,6 +14,7 @@ emoji: ✍️
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![Python 3.10](badges/python3_10.svg)
+[![Open in Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm.svg)](https://huggingface.co/spaces/tools4eu/asr)
 
 ![Screenshot](img/screenshot.jpg)
 
