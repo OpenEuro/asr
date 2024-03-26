@@ -18,7 +18,7 @@ emoji: ✍️
 
 ![Screenshot](img/screenshot.jpg)
 
-Automatic speech recognition uses [Distil-Whisper: distil-large-v2](https://huggingface.co/distil-whisper/distil-large-v2) to transcribe audio files and [pyannote-audio](https://github.com/pyannote/pyannote-audio) to add speaker diarization.
+Automatic speech recognition uses [Whisper](https://github.com/openai/whisper) to transcribe audio files and [pyannote-audio](https://github.com/pyannote/pyannote-audio) to add speaker diarization.
 
 It has optimized inference because of batching and Scale-Product-Attention (SDPA) or flash attention (if available).
 
