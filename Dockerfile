@@ -1,4 +1,4 @@
-FROM pytorch/pytorch:2.1.2-cuda12.1-cudnn8-runtime
+FROM pytorch/pytorch:2.4.0-cuda12.1-cudnn9-runtime
 
 ENV NB_USER jovyan
 ENV NB_UID 1000
@@ -18,8 +18,8 @@ RUN export DEBIAN_FRONTEND=noninteractive \
     && add-apt-repository ppa:deadsnakes/ppa \
     && apt-get -yq update \
     && apt-get -yq install --no-install-recommends \
-        python3.10 \
-        python3.10-venv \
+        python3.11 \
+        python3.11-venv \
     &&  apt upgrade -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
@@ -34,7 +34,7 @@ WORKDIR /home/${NB_USER}/
 ENV PATH=/venv/bin:$PATH
 
 COPY --chown=${NB_USER}:users ./requirements.txt /home/${NB_USER}/requirements.txt
-RUN python3.10 -m venv /home/${NB_USER}/venv \
+RUN python3.11 -m venv /home/${NB_USER}/venv \
     && /home/${NB_USER}/venv/bin/pip install --upgrade pip wheel \
     && /home/${NB_USER}/venv/bin/pip install -r /home/${NB_USER}/requirements.txt
 
