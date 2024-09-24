@@ -46,17 +46,15 @@ For a desktop (visual UI available), follow [these instructions](https://www.doc
 
 ### Docker (recommended)
 
-Build the Docker image
-
-`docker build -t asr .` (make sure Docker is running on your system)
+The Docker image is prebuilt and maintained at [tools4eu/docker-asr](https://github.com/tools4eu/docker-asr) and available on the Docker Hub as [tools4eu/asr](https://hub.docker.com/repository/docker/tools4eu/asr/general)
 
 Run the Docker image, forward port 7860 (Gradio) and pass your GPU(s) to the container
 
-`docker run -p 7860:7860 --gpus all asr`
+`docker run -p 7860:7860 --gpus all tools4eu/asr`
 
 Or in detached mode (in background)
 
-`docker run -d -p 7860:7860 --gpus all asr`
+`docker run -d -p 7860:7860 --gpus all tools4eu/asr`
 
 You can check whether it is running with
 
