@@ -3,11 +3,11 @@ title: Automatic speech recognition
 sdk: gradio
 app_file: src/app.py
 python_version: 3.11
-sdk_version: 4.40.0
+sdk_version: 4.44.0
 app_port: 7860
 tags: [asr, stt, speech-to-text, whisper, pyannote, diarization]
 pinned: true
-emoji: ✍️
+emoji: 👂
 ---
 
 # Automatic speech recognition
@@ -34,7 +34,7 @@ The repo contains (will contain) code to run the software
 
 ### Prerequisites
 
-The host machine must have an NVidia graphics card with CUDA 12.x installed natively, preferably [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive), even when using Docker.
+The host machine must have an Nvidia graphics card with CUDA 12.x installed natively, preferably [CUDA 12.1](https://developer.nvidia.com/cuda-12-1-0-download-archive), even when using Docker.
 
 The graphics card should have at least 12GB VRAM for the largest model.
 
