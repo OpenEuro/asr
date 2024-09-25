@@ -244,39 +244,39 @@ with gr.Blocks(title="Automatic speech recognition (beta)", css=css, analytics_e
             with gr.Column():
                 textbox = gr.Textbox(label='Transciption',visible=True)
 
-    with gr.Tab("Process multiple files"):
-        files_source=gr.Files(label="Select Audio Files", file_count="multiple")
-        with gr.Column():
-            dropdown_model_multi = gr.Dropdown(
-                    label='Model', 
-                    choices = ["openai/whisper-large-v3", "openai/whisper-medium", "openai/whisper-small", "openai/whisper-tiny"],
-                    value="openai/whisper-large-v3", 
-                    info="""
-                        Larger models will increase the quality of the transcription, but reduce performance.
-                    """)
-        dropdown_lang_multi = gr.Dropdown(
-                    label='Language', 
-                    choices = ['Automatic detection']+sorted(list(languages.keys())), 
-                    value='Automatic detection', 
-                    info="""
-                        Setting the language to "Automatic detection" will auto-detect the language based on the first 30 seconds.
-                        If the language is known upfront, always set it manually.
-                    """)
-        checkbox_trans_multi = gr.Checkbox(label='Translate to English')
-        with gr.Column():
-            with gr.Group():
-                input_diarization_token_multi = gr.Textbox(label='Paste your Hugging Face token here for speaker diarization (or add it as an environment variable)', value=HF_AUTH_TOKEN)
-                check_diarization_multi = gr.Checkbox(label='Speaker diarization')
-                with gr.Accordion("For more details click here...", open=False):
-                    gr.Markdown("""
-                                    An access token can be created [here](https://hf.co/settings/tokens)
+    # with gr.Tab("Process multiple files"):
+    #     files_source=gr.Files(label="Select Audio Files", file_count="multiple")
+    #     with gr.Column():
+    #         dropdown_model_multi = gr.Dropdown(
+    #                 label='Model', 
+    #                 choices = ["openai/whisper-large-v3", "openai/whisper-medium", "openai/whisper-small", "openai/whisper-tiny"],
+    #                 value="openai/whisper-large-v3", 
+    #                 info="""
+    #                     Larger models will increase the quality of the transcription, but reduce performance.
+    #                 """)
+    #     dropdown_lang_multi = gr.Dropdown(
+    #                 label='Language', 
+    #                 choices = ['Automatic detection']+sorted(list(languages.keys())), 
+    #                 value='Automatic detection', 
+    #                 info="""
+    #                     Setting the language to "Automatic detection" will auto-detect the language based on the first 30 seconds.
+    #                     If the language is known upfront, always set it manually.
+    #                 """)
+    #     checkbox_trans_multi = gr.Checkbox(label='Translate to English')
+    #     with gr.Column():
+    #         with gr.Group():
+    #             input_diarization_token_multi = gr.Textbox(label='Paste your Hugging Face token here for speaker diarization (or add it as an environment variable)', value=HF_AUTH_TOKEN)
+    #             check_diarization_multi = gr.Checkbox(label='Speaker diarization')
+    #             with gr.Accordion("For more details click here...", open=False):
+    #                 gr.Markdown("""
+    #                                 An access token can be created [here](https://hf.co/settings/tokens)
                                 
-                                    If not done yet for your account, you need to [accept segmentation terms & conditions](https://huggingface.co/pyannote/segmentation-3.0)
+    #                                 If not done yet for your account, you need to [accept segmentation terms & conditions](https://huggingface.co/pyannote/segmentation-3.0)
                                 
-                                    If not done yet for your account, you need to [accept diarization terms & conditions](https://huggingface.co/pyannote/speaker-diarization-3.1)
-                                """)
-        btn_transcribe_multi= gr.Button("Transcribe")
-        textbox_transcribe_multi= gr.Chatbot(label='Transciption',visible=True)
+    #                                 If not done yet for your account, you need to [accept diarization terms & conditions](https://huggingface.co/pyannote/speaker-diarization-3.1)
+    #                             """)
+    #     btn_transcribe_multi= gr.Button("Transcribe")
+    #     textbox_transcribe_multi= gr.Chatbot(label='Transciption',visible=True)
 
     with gr.Tab("Device info"):
         gr.Markdown(device_info, label="Hardware info & installed packages")
@@ -284,6 +284,6 @@ with gr.Blocks(title="Automatic speech recognition (beta)", css=css, analytics_e
 
     transcribe_event = upl_btn.click(fn=inference, inputs=[upl_input, dropdown_model, upl_language, upl_translate, check_diarization, input_diarization_token], outputs=[textbox], concurrency_limit=1)
     # transcribe_files_event = btn_transcribe_folder.click(fn=process_folder, inputs=[files_source, dropdown_lang_multi, checkbox_trans_multi, input_diarization_token], outputs=[textbox_transcribe_folder], concurrency_limit=1)
-    transcribe_files_event = btn_transcribe_multi.click(fn=process_folder, inputs=[files_source, dropdown_model_multi, dropdown_lang_multi, check_diarization_multi, checkbox_trans_multi, input_diarization_token_multi], outputs=[], concurrency_limit=1)
+    # transcribe_files_event = btn_transcribe_multi.click(fn=process_folder, inputs=[files_source, dropdown_model_multi, dropdown_lang_multi, check_diarization_multi, checkbox_trans_multi, input_diarization_token_multi], outputs=[], concurrency_limit=1)
 
 demo.queue().launch(server_name="0.0.0.0")
